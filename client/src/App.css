@@ -1,0 +1,196 @@
+/* Global */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  color: #111;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Main container */
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  background: #f2f2f2;
+}
+
+/* Top bar */
+.topbar {
+  background: #1976d2;
+  color: white;
+  padding: 14px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Search section */
+.search-box {
+  background: #e3f2fd;
+  padding: 12px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background: white;
+  color: #111;
+}
+
+/* Suggestion dropdown */
+.suggestions {
+  background: white;
+  border: 1px solid #ccc;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.suggestions div {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.suggestions div:hover {
+  background: #f5f5f5;
+}
+
+/* Buttons */
+.green {
+  width: 100%;
+  padding: 12px;
+  background: #43a047;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.green:active {
+  background: #388e3c;
+}
+
+/* Bus list */
+.bus-list {
+  background: white;
+}
+
+.bus-card {
+  padding: 14px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.bus-card:hover {
+  background: #f7f7f7;
+}
+
+.bus-card div {
+  margin-bottom: 4px;
+}
+
+/* No result */
+.no-result {
+  padding: 20px;
+  text-align: center;
+  color: #777;
+  font-size: 16px;
+}
+
+/* Status section */
+.status {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  background: white;
+  font-size: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Popup */
+.popup {
+  background: #fff3cd;
+  color: #856404;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Timeline */
+.timeline {
+  padding: 15px;
+  background: white;
+}
+
+.timeline-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #1976d2;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.stop-name {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.stop-time {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Back button */
+.back {
+  width: 100%;
+  padding: 12px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.back:active {
+  background: #145ea8;
+}
+
+/* Map iframe fix */
+iframe {
+  border: none;
+}
+.timeline-row.passed .stop-name {
+  color: #999;
+}
+
+.timeline-row.current .stop-name {
+  color: #1976d2;
+  font-weight: bold;
+}
+
+.bottom-message {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1976d2;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: bold;
+}

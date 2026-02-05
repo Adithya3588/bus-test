@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "id": "bus1",
+      "busName": "Mangalore → Dharmasthala Superfast",
+      "startTime": "16:00",
+      "endTime": "18:10",
+      "stops": [
+        { "name": "Mangalore KSRTC", "lat": 12.9141, "lng": 74.8560, "time": "16:00" },
+        { "name": "Jyoti Circle", "lat": 12.9050, "lng": 74.8450, "time": "16:08" },
+        { "name": "Kankanady", "lat": 12.8880, "lng": 74.8530, "time": "16:16" },
+        { "name": "Pumpwell", "lat": 12.8700, "lng": 74.8800, "time": "16:29" },
+        { "name": "BC Road", "lat": 12.9910, "lng": 75.0290, "time": "16:50" },
+        { "name": "Beltangady", "lat": 13.0000, "lng": 75.3000, "time": "17:48" },
+        { "name": "Ujire", "lat": 13.0000, "lng": 75.3400, "time": "17:55" },
+        { "name": "Dharmasthala", "lat": 12.9500, "lng": 75.3800, "time": "18:10" }
+      ]
+    }
+  ]
+}
