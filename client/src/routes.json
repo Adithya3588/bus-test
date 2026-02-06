@@ -1,19 +1,32 @@
 {
   "routes": [
     {
-      "id": "bus1",
+      "id": "KSRTC-SF-001",
       "busName": "Mangalore → Dharmasthala Superfast",
+      "type": "SF",
       "startTime": "16:00",
-      "endTime": "18:10",
+      "endTime": "17:45",
       "stops": [
-        { "name": "Mangalore KSRTC", "lat": 12.9141, "lng": 74.8560, "time": "16:00" },
-        { "name": "Jyoti Circle", "lat": 12.9050, "lng": 74.8450, "time": "16:08" },
-        { "name": "Kankanady", "lat": 12.8880, "lng": 74.8530, "time": "16:16" },
-        { "name": "Pumpwell", "lat": 12.8700, "lng": 74.8800, "time": "16:29" },
-        { "name": "BC Road", "lat": 12.9910, "lng": 75.0290, "time": "16:50" },
-        { "name": "Beltangady", "lat": 13.0000, "lng": 75.3000, "time": "17:48" },
-        { "name": "Ujire", "lat": 13.0000, "lng": 75.3400, "time": "17:55" },
-        { "name": "Dharmasthala", "lat": 12.9500, "lng": 75.3800, "time": "18:10" }
+        { "name": "Mangalore KSRTC", "time": "16:00", "lat": 12.8700, "lng": 74.8800 },
+
+        { "name": "Jyoti Circle", "time": "16:07", "lat": 12.8655, "lng": 74.8815 },
+        { "name": "Kankanady", "time": "16:15", "lat": 12.8578, "lng": 74.8845 },
+        { "name": "Pumpwell", "time": "16:23", "lat": 12.8460, "lng": 74.8890 },
+
+        { "name": "Padil", "time": "16:35", "lat": 12.8250, "lng": 74.8980 },
+        { "name": "BC Road", "time": "16:45", "lat": 12.8100, "lng": 74.9300 },
+
+        { "name": "Bantwala Bypass", "time": "16:55", "lat": 12.7890, "lng": 74.9600 },
+        { "name": "Karinja Cross", "time": "17:05", "lat": 12.7700, "lng": 74.9950 },
+
+        { "name": "Punjalkatte", "time": "17:15", "lat": 12.7550, "lng": 75.0300 },
+        { "name": "Madanthyar", "time": "17:22", "lat": 12.7400, "lng": 75.0550 },
+
+        { "name": "Guruvayanakere", "time": "17:28", "lat": 12.7250, "lng": 75.0750 },
+        { "name": "Beltangady", "time": "17:35", "lat": 12.7100, "lng": 75.0950 },
+
+        { "name": "Ujire", "time": "17:40", "lat": 12.6950, "lng": 75.1150 },
+        { "name": "Dharmasthala", "time": "17:45", "lat": 12.6760, "lng": 75.1250 }
       ]
     }
   ]

@@ -80,7 +80,6 @@ export default function App() {
     Math.random().toString(36).slice(2)
   );
 
-  // send GPS to backend
   useEffect(() => {
     navigator.geolocation.watchPosition(pos => {
       const lat = pos.coords.latitude;
@@ -92,9 +91,7 @@ export default function App() {
 
       fetch(`${SERVER}/update-user`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           userId,
           lat,
@@ -106,7 +103,6 @@ export default function App() {
     });
   }, []);
 
-  // fetch bus location
   useEffect(() => {
     const interval = setInterval(async () => {
       if (!selectedBus) return;
@@ -118,7 +114,6 @@ export default function App() {
     return () => clearInterval(interval);
   }, [selectedBus]);
 
-  // detect near stop
   useEffect(() => {
     if (!selectedBus || !userLoc) return;
 
@@ -144,7 +139,6 @@ export default function App() {
     setNearStop(near);
   }, [userLoc, selectedBus]);
 
-  // auto-track if speed high
   useEffect(() => {
     if (speed > 25 && !confirmed) {
       fetch(`${SERVER}/confirm-inside`, {
@@ -183,10 +177,30 @@ export default function App() {
 
   // MAP VIEW
   if (selectedBus && mapView) {
-    const loc =
-      busLocation?.mode === "live"
-        ? busLocation
-        : getPredictedLocation(selectedBus);
+    const now = new Date();
+    const start = parseTime(selectedBus.startTime);
+
+    let loc = null;
+    if (now >= start) {
+      loc =
+        busLocation?.mode === "live"
+          ? busLocation
+          : getPredictedLocation(selectedBus);
+    }
+
+    if (!loc) {
+      return (
+        <div className="app">
+          <div className="topbar">Bus Map</div>
+          <div className="bottom-message">
+            Bus yet to start. Map will be available after departure.
+          </div>
+          <button className="back" onClick={() => setMapView(false)}>
+            Back
+          </button>
+        </div>
+      );
+    }
 
     const mapUrl = `https://www.google.com/maps?q=${loc.lat},${loc.lng}`;
 
@@ -201,10 +215,7 @@ export default function App() {
           src={`https://maps.google.com/maps?q=${loc.lat},${loc.lng}&z=14&output=embed`}
         />
 
-        <button
-          className="green"
-          onClick={() => window.open(mapUrl, "_blank")}
-        >
+        <button className="green" onClick={() => window.open(mapUrl, "_blank")}>
           Open in Google Maps
         </button>
 
@@ -214,6 +225,9 @@ export default function App() {
       </div>
     );
   }
+
+  // BUS DETAIL SCREEN (UNCHANGED FROM YOUR LOGIC)
+  // 🔒 everything else stays exactly the same
 
   // BUS DETAIL SCREEN
   if (selectedBus) {
